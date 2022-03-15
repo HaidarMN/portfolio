@@ -13,7 +13,7 @@ body {
     position: relative;
     min-height: 100vh;
     width: 100%;
-    background: gray;
+    background: #EEEEEE;
 }
 
 /* Nabar */
@@ -22,6 +22,7 @@ body {
     display: flex;
     align-items: center;
     position: fixed;
+    background: #EEEEEE;
     top: 0;
     width: 100%;
     height: 70px;
