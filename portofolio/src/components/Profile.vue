@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#A3A9B0] text-[#EBEDEC] h-[100vh] px-[150px] flex flex-col justify-center items-center gap-8">
+    <div class="bg-[#A3A9B0] text-[#EBEDEC] h-[100vh] px-[150px] flex flex-col justify-center gap-4">
         <h1 class="text-center text-5xl font-extrabold">About Me</h1>
         <div class="flex flex-row justify-between w-full mt-8">
             <div class="flex flex-col w-1/2 gap-4">
@@ -19,7 +19,7 @@
                 <p>
                     Outside campus, I usually studied Python in my free time. 
                     I studied the basic, created some project, and learned Cyber Security with Python.
-                    I also work as a freelancer to push my experience and skill
+                    I also work as a freelancer to push my experience and skill.
                 </p>
             </div>
             <div class="flex justify-center w-1/2">
