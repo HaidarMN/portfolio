@@ -6,7 +6,7 @@
                 Let me know if you have any questions or you just want to say hello.
                 I'll try my best to respond it as soon as possible!
             </p>
-            <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-8 items-center font-bold text-sm sm:text">
+            <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-8 items-center font-bold text-sm sm:text-base">
                 <button class="rounded-lg px-2 sm:px-3 lg:px-5 py-1.5 sm:py-2 lg:py-3 border border-[#25D366] bg-[#25D366] text-[#EBEDEC] hover:shadow-lg font-bold transition duration-150 ease-in-out w-fit">
                     <a href="https://wa.me/6281359326987" target="_blank" class="flex flex-row gap-2 items-center">
                         <img src="../assets/icons/whatsapp.svg">
