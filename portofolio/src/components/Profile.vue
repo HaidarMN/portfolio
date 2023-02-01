@@ -6,13 +6,13 @@
                 <p>
                     Hi! Since kid I really like anything related to technology.
                     So I started my journey to become a software developer at
-                    <a href="https://smktelkom-mlg.sch.id" target="_blank" class="font-bold text-[#3D3D3B]">SMK Telkom Sandhy Putra Malang</a>
+                    <a href="https://smktelkom-mlg.sch.id" target="_blank" class="font-bold text-[#4C5870]">SMK Telkom Sandhy Putra Malang</a>
                     major in Software Engineering.
                     I learned Java, HTML5 & CSS3, JavaScript, and I also learned some framework like Laravel and Vue.js.
                 </p>
                 <p>
                     Currently I'm studying at 
-                    <a href="https://www.upitra.ac.id/" target="_blank" class="font-bold text-[#3D3D3B]">Pignatelli Triputra University</a>.
+                    <a href="https://www.upitra.ac.id/" target="_blank" class="font-bold text-[#4C5870]">Pignatelli Triputra University</a>.
                     I still learning about C languages.
                     I got subject about a pointer which is quite interesting to master it and yet hard at the same time.
                 </p>

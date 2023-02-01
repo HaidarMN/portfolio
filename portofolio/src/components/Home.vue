@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#EBEDEC] text-[#4C5870] h-[100vh] px-[150px] flex flex-col justify-center gap-4">
+    <div class="bg-[#EBEDEC] text-[#4C5870] h-[100vh] px-[150px] pt-[50px] flex flex-col justify-center gap-4">
         <h1 class="text-2xl text-[#3D3D3B]">Hello there! My name is</h1>
         <h1 class="text-7xl font-extrabold">Haidar Muhammad Naufal</h1>
         <h2 class="text-5xl">Software Engineer</h2>
@@ -11,7 +11,7 @@
             <a href="https://www.upitra.ac.id/" target="_blank" class="font-bold">Pignatelli Triputra University</a> 
             major in Information System.
         </p>
-        <button class="mt-8 rounded-lg px-5 py-3 border border-[#3D3D3B] hover:bg-[#3D3D3B] hover:text-[#EBEDEC] w-fit">
+        <button class="mt-8 rounded-lg px-5 py-3 border border-[#4C5870] hover:bg-[#4C5870] hover:text-[#EBEDEC] font-bold transition duration-150 ease-in-out w-fit">
             <a href="mailto:hmnaufal14@gmail.com">Contact Me</a>
         </button>
         <div class="flex flex-row gap-4 items-center mt-8">
