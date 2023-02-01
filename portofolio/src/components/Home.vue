@@ -1,6 +1,6 @@
 <template>
     <div class="bg-[#EBEDEC] text-[#4C5870] h-screen px-[50px] sm:px-[75px] lg:px-[150px] sm:pt-[50px] flex flex-col justify-center gap-2 sm:gap-4">
-        <h1 class="text-xs md:text-xl lg:text-2xl text-[#3D3D3B]">Hello there! My name is</h1>
+        <h1 class="text-xs md:text-xl lg:text-2xl">Hello there! My name is</h1>
         <h1 class="text-xl sm:text-5xl lg:text-7xl font-extrabold">Haidar Muhammad Naufal</h1>
         <h2 class="sm:text-2xl lg:text-5xl">Software Engineer</h2>
         <p class="text-xs sm:text-base mt-2 sm:mt-4 lg:mt-8 w-full lg:w-2/5">
