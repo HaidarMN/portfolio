@@ -1,6 +1,6 @@
 <template>
     <div class="bg-[#A3A9B0] text-[#EBEDEC] h-fit px-[50px] sm:px-[75px] lg:px-[150px] pt-[50px] sm:pt-[100px] lg:pt-[150px] pb-[50px] sm:pb-[75px] lg:pb-[100px] flex flex-col justify-center gap-2 sm:gap-4">
-        <h1 class="text-xl sm:text-3xl lg:text-5xl text-center font-extrabold">Recent Project</h1>
+        <h1 class="text-xl sm:text-3xl lg:text-5xl text-center font-extrabold">Recent Projects</h1>
         <div class="flex flex-col mt-2 sm:mt-4 lg:mt-8 gap-20 items-center">
 
             <!-- First -->

@@ -1,21 +1,24 @@
 <template>
     <div class="bg-[#EBEDEC] text-[#4C5870] h-fit px-[50px] sm:px-[75px] lg:px-[150px] pt-[50px] sm:pt-[100px] lg:pt-[150px] pb-[50px] sm:pb-[75px] lg:pb-[100px] flex flex-col justify-center gap-2 sm:gap-4">
         <h1 class="text-xl sm:text-3xl lg:text-5xl text-center font-extrabold">My Skills</h1>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gap-y-8 text-[#EBEDEC] mt-2 sm:mt-4 lg:mt-8 text-center text-xl justify-items-center">
-            <div class="bg-[#4C5870] w-[150px] lg:w-[180px] h-[150px] lg:h-[180px] p-4 rounded-full flex justify-center items-center">
-                HTML & CSS3
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-10 mt-2 sm:mt-4 lg:mt-8 text-xl justify-items-center">
+            <div class="bg-[#4C5870] w-[100px] sm:w-[120px] lg:w-[160px] h-[100px] sm:h-[120px] lg:h-[160px] p-4 rounded-full flex justify-center items-center">
+                <img src="../assets/icons/html.svg" class="w-[60px] sm:w-[75px] lg:w-[100px] h-[60px] sm:h-[75px] lg:h-[100px]">
             </div>
-            <div class="bg-[#4C5870] w-[150px] lg:w-[180px] h-[150px] lg:h-[180px] p-4 rounded-full flex justify-center items-center">
-                JavaScript
+            <div class="bg-[#4C5870] w-[100px] sm:w-[120px] lg:w-[160px] h-[100px] sm:h-[120px] lg:h-[160px] p-4 rounded-full flex justify-center items-center">
+                <img src="../assets/icons/css.svg" class="w-[60px] sm:w-[75px] lg:w-[100px] h-[60px] sm:h-[75px] lg:h-[100px]">
             </div>
-            <div class="bg-[#4C5870] w-[150px] lg:w-[180px] h-[150px] lg:h-[180px] p-4 rounded-full flex justify-center items-center">
-                Laravel
+            <div class="bg-[#4C5870] w-[100px] sm:w-[120px] lg:w-[160px] h-[100px] sm:h-[120px] lg:h-[160px] p-4 rounded-full flex justify-center items-center">
+                <img src="../assets/icons/javascript.svg" class="w-[60px] sm:w-[75px] lg:w-[100px] h-[60px] sm:h-[75px] lg:h-[100px]">
             </div>
-            <div class="bg-[#4C5870] w-[150px] lg:w-[180px] h-[150px] lg:h-[180px] p-4 rounded-full flex justify-center items-center">
-                Vue.js
+            <div class="bg-[#4C5870] w-[100px] sm:w-[120px] lg:w-[160px] h-[100px] sm:h-[120px] lg:h-[160px] p-4 rounded-full flex justify-center items-center">
+                <img src="../assets/icons/vuejs.svg" class="w-[60px] sm:w-[75px] lg:w-[100px] h-[60px] sm:h-[75px] lg:h-[100px]">
             </div>
-            <div class="bg-[#4C5870] w-[150px] lg:w-[180px] h-[150px] lg:h-[180px] p-4 rounded-full flex justify-center items-center">
-                CorelDraw
+            <div class="bg-[#4C5870] w-[100px] sm:w-[120px] lg:w-[160px] h-[100px] sm:h-[120px] lg:h-[160px] p-4 rounded-full flex justify-center items-center">
+                <img src="../assets/icons/laravel.svg" class="w-[60px] sm:w-[75px] lg:w-[100px] h-[60px] sm:h-[75px] lg:h-[100px]">
+            </div>
+            <div class="bg-[#4C5870] w-[100px] sm:w-[120px] lg:w-[160px] h-[100px] sm:h-[120px] lg:h-[160px] p-4 rounded-full flex justify-center items-center">
+                <img src="../assets/icons/corelDraw.svg" class="w-[60px] sm:w-[75px] lg:w-[100px] h-[60px] sm:h-[75px] lg:h-[100px]">
             </div>
         </div>
     </div>
