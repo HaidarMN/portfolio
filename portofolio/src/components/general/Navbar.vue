@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed z-50 bg-[#EBEDEC] text-[#4C5870] px-[10px] sm:px-[25px] lg:px-[50px] py-4 w-screen shadow-md flex flex-row justify-between items-center">
+    <div class="fixed z-30 bg-[#EBEDEC] text-[#4C5870] px-[10px] sm:px-[25px] lg:px-[50px] py-4 w-screen shadow-md flex flex-row justify-between items-center">
         <a href="#">
             <img src="../../assets/vue.svg" class="h-[35px]">
         </a>

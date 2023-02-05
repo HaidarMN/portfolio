@@ -1,109 +1,148 @@
 <template>
     <div class="bg-[#A3A9B0] text-[#EBEDEC] h-fit px-[50px] sm:px-[75px] lg:px-[150px] pt-[50px] sm:pt-[100px] lg:pt-[150px] pb-[50px] sm:pb-[75px] lg:pb-[100px] flex flex-col justify-center gap-2 sm:gap-4">
-        <h1 class="text-xl sm:text-3xl lg:text-5xl text-center font-extrabold">Recent Projects</h1>
-        <div class="flex flex-col mt-2 sm:mt-4 lg:mt-8 gap-20 items-center">
-
-            <!-- First -->
-            <div class="flex flex-col sm:flex-row sm:justify-between w-full gap-4 sm:gap-2 lg:gap-4">
-                <a href="https://github.com/HaidarMN/py_qrScanner" target="_blank" class="transition duration-150 ease-in-out hover:scale-105 sm:w-1/2">
-                    <img src="../assets/images/qrScanner.png" class="rounded-lg h-full">
-                </a>
-                <div class="flex flex-col gap-2 lg:gap-4 justify-center text-right sm:w-1/2">
-                    <h2 class="text-lg sm:text-xl lg:text-2xl font-extrabold">
-                        <a href="https://github.com/HaidarMN/py_qrScanner" target="_blank" class="transition delay-[50ms] ease-in-out hover:text-[#4C5870]">
-                            QR Scanner
-                        </a>
-                    </h2>
-                    <p class="text-xs lg:text-base">
-                        A self project that detect a QR Code and decode it what is inside the code.
-                        Made with OpenCV to open a camera and PyZBar to read the barcode or QR code.
-                        Inspired by
-                        <a href="https://www.youtube.com/@SimplilearnOfficial" target="_blank" class="font-bold text-[#4C5870]">
-                            Simplilearn
-                        </a>
-                        on YouTube.
+        <h1 class="text-xl sm:text-3xl lg:text-5xl text-center font-extrabold">My Projects</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-2 sm:mt-4 lg:mt-8 justify-items-center">
+            <div 
+                v-for="(project, index) in projects"
+                :key="project"
+                @click="showModal(index)"
+                class="h-96 w-full px-6 py-4 bg-[#EBEDEC] text-[#4C5870] rounded flex flex-col justify-between transition ease-in-out delay-150 hover:-translate-y-2 cursor-pointer"
+            >
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-lg sm:text-xl lg:text-2xl font-bold line-clamp-2 h-[4rem]">{{ project.name }}</h2>
+                    <p class="text-xs sm:text-sm lg:text-base text-[#A3A9B0]">{{ project.desc }}</p>
+                </div>
+                <div class="flex flex-row gap-4 gap-y-1 flex-wrap h-fit">
+                    <p 
+                        v-for="lang in project.langs"
+                        class="text-xs lg:text-base font-bold"
+                    >
+                        {{ lang }}
                     </p>
-                    <div class="flex flex-row justify-end gap-2 lg:gap-4 text-[#4C5870] text-xs lg:text-base font-bold">
-                        <p>Python</p>
-                        <p>OpenCV</p>
-                        <p>PyZBar</p>
-                    </div>
-                    <div class="flex flex-row justify-end sm:gap-2 lg:gap-4">
-                        <a href="https://github.com/HaidarMN/py_qrScanner" target="_blank" class="w-[31px] lg:w-[35px] transition duration-150 ease-in-out hover:scale-110">
-                            <img src="../assets/icons/github.svg">
-                        </a>
-                    </div>
                 </div>
             </div>
-
-            <!-- Second -->
-            <div class="flex flex-col-reverse sm:flex-row sm:justify-between w-full gap-4 sm:gap-2 lg:gap-4">
-                <div class="flex flex-col gap-2 lg:gap-4 justify-center sm:w-1/2">
-                    <h2 class="text-lg sm:text-xl lg:text-2xl font-extrabold">
-                        <a href="https://github.com/HaidarMN/py_cs" target="_blank" class="transition delay-[50ms] ease-in-out hover:text-[#4C5870]">
-                            Keylogger
-                        </a>
-                    </h2>
-                    <p class="text-xs lg:text-base">
-                        Keylogget is software program that allows you to record each keystrokes that you type on your keyboard.
-                        In this program when you end the program, it will create a file name "keylogger.txt" which contains what you typed before.
-                        Inspired by
-                        <a href="https://www.youtube.com/@freecodecamp" target="_blank" class="font-bold text-[#4C5870]">
-                            freeCodeCamp.org
-                        </a>
-                        on YouTube.
-                    </p>
-                    <div class="flex flex-row gap-2 lg:gap-4 text-[#4C5870] text-xs lg:text-base font-bold">
-                        <p>Python</p>
-                        <p>Pynput</p>
-                    </div>
-                    <div class="flex flex-row sm:gap-2 lg:gap-4">
-                        <a href="https://github.com/HaidarMN/py_cs" target="_blank" class="w-[31px] lg:w-[35px] transition duration-150 ease-in-out hover:scale-110">
-                            <img src="../assets/icons/github.svg">
-                        </a>
-                    </div>
-                </div>
-                <a href="https://github.com/HaidarMN/py_cs" target="_blank" class="transition duration-150 ease-in-out hover:scale-105 sm:w-1/2">
-                    <img src="../assets/images/keylogger.png" class="rounded-lg h-full">
-                </a>
-            </div>
-
-            <!-- Third -->
-            <div class="flex flex-col sm:flex-row sm:justify-between w-full gap-4 sm:gap-2 lg:gap-4">
-                <a href="https://github.com/HaidarMN/UKK_SPP" target="_blank" class="transition duration-150 ease-in-out hover:scale-105 sm:w-1/2">
-                    <img src="../assets/images/spp.png" class="rounded-lg h-full">
-                </a>
-                <div class="flex flex-col gap-2 lg:gap-4 justify-center text-right sm:w-1/2">
-                    <h2 class="text-lg sm:text-xl lg:text-2xl font-extrabold">
-                        <a href="https://github.com/HaidarMN/UKK_SPP" target="_blank" class="transition delay-[50ms] ease-in-out hover:text-[#4C5870]">
-                            School Fees Payment
-                        </a>
-                    </h2>
-                    <p class="text-xs lg:text-base">
-                        A self project that detect a QR Code and decode it what is inside the code.
-                        Made with OpenCV to open a camera and PyZBar to read the barcode or QR code.
-                        Inspired by
-                        <a href="https://www.youtube.com/@SimplilearnOfficial" target="_blank" class="font-bold text-[#4C5870]">
-                            Simplilearn
-                        </a>
-                        on YouTube.
-                    </p>
-                    <div class="flex flex-row justify-end gap-2 lg:gap-4 text-[#4C5870] text-xs lg:text-base font-bold">
-                        <p>Laravel</p>
-                        <p>Vue.js</p>
-                        <p>Bootstrap</p>
-                    </div>
-                    <div class="flex flex-row justify-end sm:gap-2 lg:gap-4">
-                        <a href="https://github.com/HaidarMN/UKK_SPP" target="_blank" class="w-[31px] lg:w-[35px] transition duration-150 ease-in-out hover:scale-110">
-                            <img src="../assets/icons/github.svg">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <button class="px-3 lg:px-4 py-1.5 lg:py-2 rounded-lg border-2 border-[#EBEDEC] hover:bg-[#EBEDEC] text-[#EBEDEC] hover:text-[#4C5870] font-bold transition duration-150 ease-in-out w-fit">
-                <a href="#">View More</a>
-            </button>
         </div>
+
+        <div v-if="modal == true" class="fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50">
+            <div class="relatives mx-auto w-auto">
+                <div class="bg-[#EBEDEC] text-[#4C5870] px-4 py-6 w-[1250px] rounded flex flex-row">
+                    <div class="py-2 pr-4 border-r-2 border-[#4C5870] w-2/6">
+                        <img :src="projects[this.id].img" class="rounded">
+                    </div>
+                    <div class="flex flex-col gap-2 py-2 pl-4 w-4/6 justify-between">
+                        <div class="flex flex-row justify-between">
+                            <div class="flex flex-row gap-4 items-center">
+                                <a 
+                                    v-for="(link, index) in projects[this.id].links"
+                                    :href="link"
+                                    target="_blank"
+                                    class="w-[31px] lg:w-[35px] transition duration-150 ease-in-out hover:scale-110"
+                                >
+                                    <img v-if="index == 'github'" src="../assets/icons/github.svg">
+                                    <img v-else src="../assets/icons/external.svg">
+                                </a>
+                            </div>
+                            <img @click="modal = false" src="../assets/icons/close.svg" class="w-[31px] lg:w-[35px] cursor-pointer">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h1 class="text-lg sm:text-xl lg:text-3xl font-bold">{{ projects[this.id].name }}</h1>
+                            <p class="text-xs sm:text-sm lg:text-lg text-[#A3A9B0]">{{ projects[this.id].desc }}</p>
+                        </div>
+                        <div class="flex flex-row gap-4 gap-y-1 flex-wrap h-fit">
+                            <p 
+                                v-for="lang in projects[this.id].langs"
+                                class="text-xs lg:text-base font-bold"
+                            >
+                                {{ lang }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-if="modal == true" class="fixed inset-0 z-40 opacity-50 bg-black min-h-full"></div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            modal: false,
+            id: '',
+            projects: [
+                {
+                    name: "QR Scanner",
+                    desc: "A program that scan a QR code and decode it using OpenCV and PyZBar developed in Python",
+                    langs: ["Python", "OpenCV", "PyZBar"],
+                    links: {
+                        github: "https://github.com/HaidarMN/py_qrScanner"
+                    },
+                    img: "src/assets/images/qrScanner.png"
+                },
+                {
+                    name: "Keylogger",
+                    desc: "Keylogger is software program that allows you to record each keystrokes that you type on your keyboard",
+                    langs: ["Python", "Pynput"],
+                    links: {
+                        github: "https://github.com/HaidarMN/py_cs"
+                    },
+                    img: "src/assets/images/keylogger.png"
+                },
+                {
+                    name: "School Fees Payment",
+                    desc: "School assignment as a graduation requirement when I was still at vocational high school",
+                    langs: ["Laravel", "Vue.js", "Bootstrap", "HTML", "CSS", "JavaScript"],
+                    links: {
+                        github: "https://github.com/HaidarMN/ukk_spp"
+                    },
+                    img: "src/assets/images/spp.png"
+                },
+                {
+                    name: "Simple A.I.",
+                    desc: "An A.I. that work like Google Asisstant using speechRecognition to hear our voice and convert to text-to-speech with pyttsx3 to run the code",
+                    langs: ["Python", "speechRecognition", "pyttsx3"],
+                    links: {
+                        github: "https://github.com/HaidarMN/Simple-A.I."
+                    },
+                    img: "src/assets/images/ai.png"
+                },
+                {
+                    name: "Portofolio Website",
+                    desc: "My portofolio website hosted using Github Pages",
+                    langs: ["Vite", "Vue.js", "TailwindCSS"],
+                    links: {
+                        github: "https://github.com/HaidarMN/HaidarMN.github.io",
+                        other: "https://haidarmn.github.io"
+                    }
+                },
+                {
+                    name: "Self Check-Up Covid-19",
+                    desc: "Self Check-Up website that sorts your body temperature to check that you have Covid or not",
+                    langs: ["PHP", "HTML", "CSS", "JavaScript"],
+                    links: {
+                        github: "https://github.com/HaidarMN/Covid-19"
+                    },
+                    img: "src/assets/images/covid.png"
+                },
+                {
+                    name: "Library Website",
+                    desc: "Website that contains all library (fake) books from the database that uses the CRUD method",
+                    langs: ["PHP", "HTML", "CSS", "JavaScript"],
+                    links: {
+                        github: "https://github.com/HaidarMN/Web-Perpus"
+                    },
+                    img: "src/assets/images/perpus.png"
+                },
+            ]
+        }
+    },
+
+    methods: {
+        showModal(id) {
+            this.id = id
+            this.modal = true
+        }
+    }
+}
+</script>

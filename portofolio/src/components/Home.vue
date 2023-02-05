@@ -19,10 +19,10 @@
             <a href="https://www.instagram.com/zev_alarick" target="_blank" class="transition duration-150 ease-in-out hover:scale-110">
                 <img src="../assets/icons/instagram.svg">
             </a>
-            <a href="https://www.instagram.com/zev_alarick" target="_blank" class="transition duration-150 ease-in-out hover:scale-110">
+            <a href="https://www.linkedin.com/in/haidar-muhammad-naufal" target="_blank" class="transition duration-150 ease-in-out hover:scale-110">
                 <img src="../assets/icons/linkedin.svg">
             </a>
-            <a href="https://www.instagram.com/zev_alarick" target="_blank" class="transition duration-150 ease-in-out hover:scale-110">
+            <a href="https://github.com/HaidarMN" target="_blank" class="transition duration-150 ease-in-out hover:scale-110">
                 <img src="../assets/icons/github.svg">
             </a>
         </div>
