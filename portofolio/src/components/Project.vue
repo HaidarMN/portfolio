@@ -9,8 +9,8 @@
                 class="h-96 w-full px-6 py-4 bg-[#EBEDEC] text-[#4C5870] rounded flex flex-col justify-between transition ease-in-out delay-150 hover:-translate-y-2 cursor-pointer"
             >
                 <div class="flex flex-col gap-2">
-                    <h2 class="text-lg sm:text-xl lg:text-2xl font-bold line-clamp-2 h-[4rem]">{{ project.name }}</h2>
-                    <p class="text-xs sm:text-sm lg:text-base text-[#A3A9B0]">{{ project.desc }}</p>
+                    <h2 class="text-lg sm:text-xl lg:text-2xl font-bold line-clamp-2 h-[3.8rem]">{{ project.name }}</h2>
+                    <p class="text-xs sm:text-sm lg:text-base text-[#A3A9B0] line-clamp-6">{{ project.desc }}</p>
                 </div>
                 <div class="flex flex-row gap-4 gap-y-1 flex-wrap h-fit">
                     <p 
@@ -23,14 +23,14 @@
             </div>
         </div>
 
-        <div v-if="modal == true" class="fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50">
+        <div v-if="modal == true" @click="modal = false" class="fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50">
             <div class="relatives mx-auto w-auto">
-                <div class="bg-[#EBEDEC] text-[#4C5870] px-4 py-6 w-[1250px] rounded flex flex-row">
-                    <div class="py-2 pr-4 border-r-2 border-[#4C5870] w-2/6">
+                <div class="bg-[#EBEDEC] text-[#4C5870] px-4 py-6 w-[85vw] rounded flex flex-col sm:flex-row">
+                    <div class="pb-4 sm:py-2 px-2 sm:pr-4 border-b-2 sm:border-r-2 sm:border-b-0 border-[#4C5870] w-full sm:w-2/5 md:w-2/6 flex justify-center items-center">
                         <img :src="projects[this.id].img" class="rounded">
                     </div>
-                    <div class="flex flex-col gap-2 py-2 pl-4 w-4/6 justify-between">
-                        <div class="flex flex-row justify-between">
+                    <div class="flex flex-col gap-2 pt-4 sm:py-2 px-2 sm:pl-4 w-full sm:w-3/5 md:w-4/6 justify-between">
+                        <!-- <div class="flex flex-row justify-between"> -->
                             <div class="flex flex-row gap-4 items-center">
                                 <a 
                                     v-for="(link, index) in projects[this.id].links"
@@ -42,8 +42,8 @@
                                     <img v-else src="../assets/icons/external.svg">
                                 </a>
                             </div>
-                            <img @click="modal = false" src="../assets/icons/close.svg" class="w-[31px] lg:w-[35px] cursor-pointer">
-                        </div>
+                            <!-- <img @click="modal = false" src="../assets/icons/close.svg" class="w-[31px] lg:w-[35px] cursor-pointer">
+                        </div> -->
                         <div class="flex flex-col gap-2">
                             <h1 class="text-lg sm:text-xl lg:text-3xl font-bold">{{ projects[this.id].name }}</h1>
                             <p class="text-xs sm:text-sm lg:text-lg text-[#A3A9B0]">{{ projects[this.id].desc }}</p>
