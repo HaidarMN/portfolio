@@ -5,7 +5,7 @@
     <Profile id="about" />
     <Skills id="skills" />
     <Experience id="experience" />
-    <Project id="project" />
+    <Project id="projects" />
     <Contact id="contact" />
     <Footer />
   </div>
