@@ -10,8 +10,17 @@
             </button>
         </div>
 
-        <div :class="menu ? 'flex' : 'hidden'" class="sm:flex flex-col sm:flex-row gap-3 sm:gap-4 mt-3 sm:mt-0 items-center font-bold text-xs md:text-sm lg:text-base">
-            <a v-for="link in links" :href="'#' + link" class="capitalize py-1 hover:mt-0.5 hover:border-b-2 hover:border-[#4C5870] transition duration-150 ease-out">{{ link }}</a>
+        <div
+            :class="menu ? 'flex' : 'hidden'"
+            class="sm:flex flex-col sm:flex-row gap-3 sm:gap-4 mt-3 sm:mt-0 items-center font-bold text-xs md:text-sm lg:text-base"
+        >
+            <a
+                v-for="link in links"
+                :href="'#' + link"
+                class="capitalize py-1 hover:mt-0.5 hover:border-b-2 hover:border-[#4C5870] transition duration-150 ease-out"
+            >
+                {{ link }}
+            </a>
             <a 
                 href="Resume.pdf"
                 class="rounded-md px-4 py-2 border border-[#4C5870] hover:bg-[#4C5870] hover:text-[#EBEDEC] transition duration-150 ease-in-out w-fit"
@@ -37,6 +46,6 @@ export default {
         //     this.menu = !this.menu
         //     console.log(this.menu);
         // }
-    }
+    },
 }
 </script>
