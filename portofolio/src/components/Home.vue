@@ -8,7 +8,7 @@
         </p>
         <p class="text-xs sm:text-base w-full lg:w-2/5">
             Currently studying at 
-            <a href="https://www.upitra.ac.id/" target="_blank" class="font-bold">Pignatelli Triputra University</a> 
+            <a href="https://www.upitra.ac.id/" target="_blank" class="font-bold link">Pignatelli Triputra University</a> 
             major in Information System.
         </p>
         <button class="mt-3 sm:mt-4 lg:mt-8 rounded-lg px-3 lg:px-5 py-2 lg:py-3 border border-[#4C5870] hover:bg-[#4C5870] hover:text-[#EBEDEC] text-xs sm:text-base font-bold transition duration-150 ease-in-out w-fit">

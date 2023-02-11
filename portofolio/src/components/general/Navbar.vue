@@ -1,8 +1,8 @@
 <template>
     <div class="fixed z-30 bg-[#EBEDEC] text-[#4C5870] px-[10px] sm:px-[25px] lg:px-[50px] py-4 w-screen shadow-md flex flex-col sm:flex-row justify-between items-center">
         <div class="flex flex-row justify-between w-full">
-            <a href="#">
-                <img src="../../assets/vue.svg" class="h-[35px]">
+            <a href="https://haidarmn.github.io">
+                <img src="../../assets/icons/h.svg" class="h-[35px]">
             </a>
             <button @click="menu = !menu" class="sm:hidden">
                 <img v-if="!menu" src="../../assets/icons/menu.svg">
