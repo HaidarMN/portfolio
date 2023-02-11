@@ -4,6 +4,6 @@
 
 @layer components {
     .link {
-        @apply hover:border-b-2 hover:border-[#4C5870]
+        @apply hover:border-b-2 hover:border-[#4C5870] transition duration-150 ease-out
     }
 }
