@@ -6,6 +6,8 @@ export default defineNuxtConfig({
       title: "Haidar Muhammad Naufal | Frontend Developer",
       link: [{ rel: "icon", type: "image/x-icon", href: "/h.svg" }],
     },
+    baseURL: "/",
+    buildAssetsDir: "assets",
   },
   modules: [
     "@pinia/nuxt",

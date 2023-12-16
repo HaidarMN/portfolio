@@ -8,8 +8,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "format": "prettier . --write",
-    "predeploy": "pnpm build",
-    "deploy": "gh-pages -d .output"
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
