@@ -5,6 +5,15 @@ export default defineNuxtConfig({
     head: {
       title: "Haidar Muhammad Naufal | Frontend Developer",
       link: [{ rel: "icon", type: "image/x-icon", href: "/h.svg" }],
+      htmlAttrs: {
+        lang: "en",
+      },
+      meta: [
+        {
+          name: "description",
+          content: "Haidar Muhammad Naufal's  Portfolio",
+        },
+      ],
     },
     baseURL: "/",
     buildAssetsDir: "assets",
@@ -31,5 +40,8 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  experimental: {
+    payloadExtraction: false,
   },
 });

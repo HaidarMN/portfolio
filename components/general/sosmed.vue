@@ -6,6 +6,7 @@
       v-for="value_of_contact in contact"
       :key="value_of_contact.id"
       :to="value_of_contact.path"
+      :aria-label="value_of_contact.label"
       target="_blank"
       class="relative flex flex-row items-center gap-2"
     >
