@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  // css: ["~/assets/css/main.css"],
   app: {
     head: {
       title: "Haidar Muhammad Naufal | Frontend Developer",
@@ -34,7 +35,6 @@ export default defineNuxtConfig({
   image: {
     dir: "public",
   },
-  css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {
       tailwindcss: {},

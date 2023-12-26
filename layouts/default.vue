@@ -1,10 +1,14 @@
 <template>
-  <GeneralNavbar class="z-10" />
-  <slot />
-  <GeneralSosmed class="z-10" />
-  <GeneralFooter />
+  <div class="overflow-x-hidden">
+    <GeneralNavbar class="z-10" />
+    <slot />
+    <GeneralSosmed class="z-10" />
+    <GeneralFooter />
+  </div>
 </template>
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style>
+@import url("~/assets/css/main.css");
+</style>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed bottom-10 left-14 flex flex-col items-center justify-between gap-4"
+    class="fixed bottom-10 left-14 hidden flex-col items-center justify-between gap-4 lg:flex"
   >
     <NuxtLink
       v-for="value_of_contact in contact"

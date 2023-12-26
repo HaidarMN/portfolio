@@ -1,11 +1,11 @@
 <template>
   <div class="content mt-10 flex min-w-full flex-col gap-10 bg-black">
     <div
-      class="flex h-full flex-col gap-14 rounded-lg bg-gray/10 px-8 py-4 pb-8 shadow"
+      class="flex h-full flex-col gap-14 rounded-lg bg-gray/10 px-4 py-8 pb-8 shadow md:px-8 md:py-4"
     >
       <div class="flex flex-col gap-4">
         <h2 class="text-lg tracking-[0.25rem] text-secondary">PROJECTS</h2>
-        <div class="grid grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
           <NuxtLink
             v-for="value_of_project in non_personal_projects"
             :key="value_of_project.id"
@@ -15,14 +15,15 @@
             :style="{ backgroundImage: `url(${value_of_project.background})` }"
           >
             <div
-              class="flex h-full flex-col items-center justify-center rounded-lg bg-black/70 px-4 py-2 opacity-0 transition-all duration-200 ease-in-out group-hover:opacity-100"
+              class="flex h-full flex-col items-center justify-center rounded-lg bg-black/70 px-4 py-2 opacity-100 transition-all duration-200 ease-in-out group-hover:opacity-100 lg:opacity-0"
             >
               <span class="text-center text-xl font-bold text-white">{{
                 value_of_project.name
               }}</span>
-              <span class="text-center font-medium text-secondary">{{
-                value_of_project.type
-              }}</span>
+              <span
+                class="text-center text-sm font-medium text-secondary md:text-base"
+                >{{ value_of_project.type }}</span
+              >
             </div>
           </NuxtLink>
         </div>
@@ -32,7 +33,7 @@
         <h2 class="text-lg tracking-[0.25rem] text-secondary">
           PERSONAL PROJECTS
         </h2>
-        <div class="grid grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
           <NuxtLink
             v-for="value_of_project in personal_projects"
             :key="value_of_project.id"
@@ -42,14 +43,15 @@
             :style="{ backgroundImage: `url(${value_of_project.background})` }"
           >
             <div
-              class="flex h-full flex-col items-center justify-center rounded-lg bg-black/70 px-4 py-2 opacity-0 transition-all duration-200 ease-in-out group-hover:opacity-100"
+              class="flex h-full flex-col items-center justify-center rounded-lg bg-black/70 px-4 py-2 opacity-100 transition-all duration-200 ease-in-out group-hover:opacity-100 lg:opacity-0"
             >
               <span class="text-center text-xl font-bold text-white">{{
                 value_of_project.name
               }}</span>
-              <span class="text-center font-medium text-secondary">{{
-                value_of_project.type
-              }}</span>
+              <span
+                class="text-center text-sm font-medium text-secondary md:text-base"
+                >{{ value_of_project.type }}</span
+              >
             </div>
           </NuxtLink>
         </div>

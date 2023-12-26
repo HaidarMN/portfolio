@@ -1,11 +1,11 @@
 <template>
   <div
-    class="flex h-[calc(100vh-4rem)] min-w-full flex-col items-center justify-center gap-10"
+    class="flex h-[calc(100vh-4rem)] w-screen flex-col items-center justify-center gap-10 px-6"
   >
-    <h1 class="text-6xl font-bold text-primary">Haidar Muhammad Naufal</h1>
-    <h2
-      class="w-[475px] overflow-hidden whitespace-nowrap text-2xl font-medium text-white"
-    >
+    <h1 class="text-5xl font-bold text-primary lg:text-6xl">
+      Haidar Muhammad Naufal
+    </h1>
+    <h2 class="text-lg font-medium text-white md:text-2xl">
       Senior Frontend Developer at Telkomsigma
     </h2>
     <button
@@ -15,7 +15,7 @@
       <span
         class="absolute left-0 top-0 -z-10 h-full w-0 bg-primary transition-all duration-300 group-hover:w-full"
       ></span>
-      <span class="z-10 p-4 text-xl font-medium text-white"
+      <span class="z-10 p-4 text-base font-medium text-white md:text-xl"
         >Checkout My Projects</span
       >
     </button>
