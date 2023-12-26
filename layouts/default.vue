@@ -2,7 +2,7 @@
   <div class="overflow-x-hidden">
     <GeneralNavbar class="z-10" />
     <slot />
-    <GeneralSosmed class="z-10" />
+    <LazyGeneralSosmed class="z-10" />
     <GeneralFooter />
   </div>
 </template>

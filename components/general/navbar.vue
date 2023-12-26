@@ -103,7 +103,6 @@ import { ref } from "vue";
 import { useStore } from "~/stores/index";
 import { firestoreDB } from "~/server/lib/firebase";
 import { collection, onSnapshot } from "firebase/firestore";
-import "animate.css";
 
 // Variabel
 const store = useStore();

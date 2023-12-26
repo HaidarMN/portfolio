@@ -1,15 +1,15 @@
 <template>
   <div>
-    <ContentMain v-if="current_page == 'Home'" />
-    <ContentAbout
+    <LazyContentMain v-if="current_page == 'Home'" />
+    <LazyContentAbout
       v-else-if="current_page == 'About'"
       class="animate__animated animate__slideInUp animate__faster"
     />
-    <ContentExperiences
+    <LazyContentExperiences
       v-else-if="current_page == 'Experiences'"
       class="animate__animated animate__slideInUp animate__faster"
     />
-    <ContentProjects
+    <LazyContentProjects
       v-else-if="current_page == 'Projects'"
       class="animate__animated animate__slideInUp animate__faster"
     />
