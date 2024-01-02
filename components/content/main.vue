@@ -5,9 +5,7 @@
     <h1 class="text-5xl font-bold text-primary lg:text-6xl">
       Haidar Muhammad Naufal
     </h1>
-    <h2 class="text-lg font-medium text-white md:text-2xl">
-      Web Frontend Developer
-    </h2>
+    <h2 class="text-lg font-medium text-white md:text-2xl">Web Developer</h2>
     <button
       @click="changePage('Projects')"
       class="group relative inline-flex items-center justify-start overflow-hidden rounded-lg border-2 border-primary transition-all"
