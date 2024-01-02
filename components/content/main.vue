@@ -6,7 +6,7 @@
       Haidar Muhammad Naufal
     </h1>
     <h2 class="text-lg font-medium text-white md:text-2xl">
-      Senior Frontend Developer at Telkomsigma
+      Web Frontend Developer
     </h2>
     <button
       @click="changePage('Projects')"

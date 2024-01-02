@@ -15,28 +15,15 @@
 
           <div class="flex w-full flex-col gap-6 md:w-4/5">
             <p class="text-base text-white md:text-lg">
-              I'm a frontend web developer proficient in Vue.js, Vite.js, or
-              Nuxt.js and use Bootstrap 5 or TailwindCSS to accelerate web
-              development.
+              I am a highly skilled frontend web developer with expertise in
+              Vue.js, Vite.js, and Nuxt.js, utilizing cutting-edge technologies
+              to craft seamless and efficient web experiences. My toolkit
+              includes Bootstrap 5, Vuetify, or Tailwind CSS, allowing me to
+              accelerate development without compromising on design and
+              functionality. With a passion for creating responsive and visually
+              appealing user interfaces, I am dedicated to delivering top-notch
+              web solutions that meet and exceed client expectations.
             </p>
-            <!-- <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <div
-                v-for="value_of_about in about"
-                :key="value_of_about.id"
-                class="flex flex-row items-start gap-2"
-              >
-                <span
-                  class="basis-1/3 text-sm font-semibold text-primary md:text-xl"
-                  >{{ value_of_about.title }}</span
-                >
-                <span class="basis-2/3 text-sm text-white md:text-xl"
-                  ><span class="text-sm font-semibold text-primary md:text-xl"
-                    >:</span
-                  >
-                  {{ value_of_about.value }}</span
-                >
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
