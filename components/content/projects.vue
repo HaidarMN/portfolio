@@ -5,56 +5,115 @@
     >
       <div class="flex flex-col gap-4">
         <h2 class="text-lg tracking-[0.25rem] text-secondary">PROJECTS</h2>
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+        <!-- <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <GeneralModalHeadless
+            v-for="value_of_project in projects"
+            :key="value_of_project.id"
+            :title="value_of_project.name"
+            :type="value_of_project.type"
+            :image="value_of_project.background"
+            :link="value_of_project.link"
+            :description="value_of_project.desc"
+          />
+        </div> -->
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
           <NuxtLink
-            v-for="value_of_project in non_personal_projects"
+            v-for="value_of_project in projects"
             :key="value_of_project.id"
             :to="value_of_project.link"
             target="_blank"
-            class="group h-40 w-full cursor-pointer rounded-lg bg-secondary/50 bg-cover bg-center bg-no-repeat"
-            :style="{ backgroundImage: `url(${value_of_project.background})` }"
+            class="group flex flex-col items-start gap-2"
           >
             <div
-              class="flex h-full flex-col items-center justify-center rounded-lg bg-black/70 px-4 py-2 opacity-100 transition-all duration-200 ease-in-out group-hover:opacity-100 lg:opacity-0"
+              class="flex flex-row items-center gap-1 text-white group-hover:text-primary"
             >
-              <span class="text-center text-xl font-bold text-white">{{
-                value_of_project.name
-              }}</span>
-              <span
-                class="text-center text-sm font-medium text-secondary md:text-base"
-                >{{ value_of_project.type }}</span
+              <h2 class="text-xl font-semibold">
+                {{ value_of_project.name }}
+              </h2>
+              <Icon
+                name="ic:round-arrow-outward"
+                class="transition-transform group-hover:-translate-y-1 group-hover:scale-110"
+                size="15px"
+              />
+            </div>
+
+            <div class="flex w-full flex-row items-start gap-4">
+              <img
+                :src="value_of_project.background"
+                :alt="value_of_project.name"
+                class="w-1/3 rounded-lg"
+              />
+              <div
+                class="flex h-full w-2/3 flex-col items-start justify-between gap-2"
               >
+                <p class="text-gray">{{ value_of_project.desc }}</p>
+              </div>
             </div>
           </NuxtLink>
         </div>
       </div>
 
       <div class="flex flex-col gap-4">
-        <h2 class="text-lg tracking-[0.25rem] text-secondary">
-          PERSONAL PROJECTS
-        </h2>
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
-          <NuxtLink
-            v-for="value_of_project in personal_projects"
-            :key="value_of_project.id"
-            :to="value_of_project.link"
-            target="_blank"
-            class="group h-40 w-full cursor-pointer rounded-lg bg-secondary/50 bg-cover bg-center bg-no-repeat"
-            :style="{ backgroundImage: `url(${value_of_project.background})` }"
-          >
-            <div
-              class="flex h-full flex-col items-center justify-center rounded-lg bg-black/70 px-4 py-2 opacity-100 transition-all duration-200 ease-in-out group-hover:opacity-100 lg:opacity-0"
-            >
-              <span class="text-center text-xl font-bold text-white">{{
-                value_of_project.name
-              }}</span>
-              <span
-                class="text-center text-sm font-medium text-secondary md:text-base"
-                >{{ value_of_project.type }}</span
+        <h2 class="text-lg tracking-[0.25rem] text-secondary">ALL PROJECTS</h2>
+        <table class="w-full table-auto">
+          <thead>
+            <tr class="border-b border-gray">
+              <th
+                v-for="(header, index) in table_header"
+                :key="index"
+                class="px-2 pb-4 text-left font-bold text-primary"
               >
-            </div>
-          </NuxtLink>
-        </div>
+                {{ header }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="(body, index_body) in table_body"
+              :key="body?.id"
+              class="border-b border-gray"
+            >
+              <td
+                v-for="(value_of_body, index) in body"
+                :key="index"
+                class="px-2 py-4 text-sm lg:text-base"
+                :class="
+                  index === 'Project' ? 'font-semibold text-white' : 'text-gray'
+                "
+                :data-label="index"
+              >
+                <NuxtLink
+                  v-if="index == 'Link'"
+                  :to="value_of_body"
+                  target="_blank"
+                  class="group flex cursor-pointer flex-row items-center gap-1 hover:text-primary"
+                >
+                  {{ value_of_body?.split("/")?.[2] }}
+                  <Icon
+                    name="ic:round-arrow-outward"
+                    class="transition-transform group-hover:-translate-y-1 group-hover:scale-110"
+                    size="15px"
+                  />
+                </NuxtLink>
+                <div
+                  v-else-if="index === 'Built with'"
+                  class="flex flex-row flex-wrap items-center justify-center gap-2 md:justify-normal"
+                >
+                  <div
+                    v-for="(skill, index_skill) in value_of_body"
+                    :key="index_skill"
+                    class="rounded-full bg-primary/20 px-2 py-1 text-xs font-medium text-primary md:px-2.5 md:py-1.5"
+                  >
+                    {{ skill }}
+                  </div>
+                </div>
+                <span v-else>
+                  {{ value_of_body }}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -67,41 +126,39 @@ import {
   onSnapshot,
   orderBy,
   query,
+  limit,
   where,
 } from "firebase/firestore";
 import { ref } from "vue";
 
 // Variabel
-const personal_projects = ref([]);
-const non_personal_projects = ref([]);
-const q_personal = query(
+const projects = ref([]);
+const all_projects = ref([]);
+const q_projects = query(
   collection(firestoreDB, "Projects"),
-  where("personal", "==", true),
+  limit(4),
+  where("display", "==", true),
   orderBy("timestamp", "desc"),
 );
-const q_non_personal = query(
+const q_all_projects = query(
   collection(firestoreDB, "Projects"),
-  where("personal", "==", false),
   orderBy("timestamp", "desc"),
 );
-
-// Function
-const getDataPersonal = onSnapshot(q_personal, (querySnapshot) => {
-  personal_projects.value = [];
-  querySnapshot.forEach((doc) => {
-    var response = {
-      id: doc.id,
-      name: doc.data().name,
-      background: doc.data().background,
-      link: doc.data().link,
-      type: doc.data().type,
-      timestamp: doc.data().timestamp,
+const table_header = ref(["Year", "Project", "Built with", "Link"]);
+const table_body = computed(() => {
+  return all_projects.value.map(({ timestamp, name, skills, link }) => {
+    return {
+      Year: timestamp,
+      Project: name,
+      "Built with": skills,
+      Link: link,
     };
-    personal_projects.value.push(response);
   });
 });
-const getDataNonPersonal = onSnapshot(q_non_personal, (querySnapshot) => {
-  non_personal_projects.value = [];
+
+// Function
+const getDataProjects = onSnapshot(q_projects, (querySnapshot) => {
+  projects.value = [];
   querySnapshot.forEach((doc) => {
     var response = {
       id: doc.id,
@@ -109,11 +166,72 @@ const getDataNonPersonal = onSnapshot(q_non_personal, (querySnapshot) => {
       background: doc.data().background,
       link: doc.data().link,
       type: doc.data().type,
-      timestamp: doc.data().timestamp,
+      desc: doc.data().desc,
+      timestamp: doc.data().timestamp?.toDate()?.getFullYear(),
     };
-    non_personal_projects.value.push(response);
+    projects.value.push(response);
+  });
+});
+const getDataAll = onSnapshot(q_all_projects, (querySnapshot) => {
+  all_projects.value = [];
+  querySnapshot.forEach((doc) => {
+    var response = {
+      id: doc.id,
+      name: doc.data().name,
+      link: doc.data().link,
+      skills: doc.data().skills,
+      timestamp: doc.data().timestamp?.toDate()?.getFullYear(),
+    };
+    all_projects.value.push(response);
   });
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@media screen and (max-width: 640px) {
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+  }
+
+  table tr {
+    border-bottom: 2px solid #acb5ac;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  table td {
+    border-bottom: 1px solid #acb5ac;
+    display: flex;
+    // font-size: 0.8em;
+    text-align: right;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: left;
+    color: #ff7f11;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+</style>

@@ -25,11 +25,11 @@
                 size="10px"
                 class="!hidden md:!inline-block"
               />
-              <div class="flex flex-row items-center gap-2.5">
+              <div class="flex flex-row items-center gap-1">
                 {{ value_of_experience.location }}
                 <Icon
                   v-if="!!value_of_experience.link"
-                  name="bi:box-arrow-up-right"
+                  name="ic:round-arrow-outward"
                   class="transition-all group-hover:-translate-y-1 group-hover:scale-110"
                   size="15px"
                 />

@@ -1,8 +1,8 @@
 <template>
   <div class="overflow-x-hidden">
-    <GeneralNavbar class="z-10" />
+    <GeneralNavbar />
     <slot />
-    <LazyGeneralSosmed class="z-10" />
+    <GeneralSosmed />
     <GeneralFooter />
   </div>
 </template>

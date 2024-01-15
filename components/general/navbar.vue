@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed top-0 z-50 flex w-screen flex-row items-center justify-between bg-black px-8 py-4 lg:px-20"
+    class="fixed top-0 z-40 flex w-screen flex-row items-center justify-between bg-black px-8 py-4 lg:px-20"
   >
     <div
       @click="changePage('Home')"

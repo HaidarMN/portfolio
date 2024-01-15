@@ -2,10 +2,10 @@
   <div
     class="flex h-[calc(100vh-4rem)] w-screen flex-col items-center justify-center gap-10 px-6"
   >
-    <h1 class="text-5xl font-bold text-primary lg:text-6xl">
+    <h1 class="text-center text-4xl font-bold text-primary lg:text-6xl">
       Haidar Muhammad Naufal
     </h1>
-    <h2 class="text-lg font-medium text-white md:text-2xl">Web Developer</h2>
+    <h2 class="text-lg font-medium text-white md:text-2xl">WEB DEVELOPER</h2>
     <button
       @click="changePage('Projects')"
       class="group relative inline-flex items-center justify-start overflow-hidden rounded-lg border-2 border-primary transition-all"
