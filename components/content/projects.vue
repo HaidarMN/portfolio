@@ -32,21 +32,29 @@
               </h2>
               <Icon
                 name="ic:round-arrow-outward"
-                class="transition-transform group-hover:-translate-y-1 group-hover:scale-110"
-                size="15px"
+                class="!hidden text-lg transition-transform group-hover:-translate-y-1 group-hover:scale-110 md:!block"
               />
             </div>
 
-            <div class="flex w-full flex-row items-start gap-4">
+            <div class="flex w-full flex-col items-start gap-4 md:flex-row">
               <img
                 :src="value_of_project.background"
                 :alt="value_of_project.name"
-                class="w-1/3 rounded-lg"
+                class="w-full rounded-lg md:w-1/3"
               />
               <div
-                class="flex h-full w-2/3 flex-col items-start justify-between gap-2"
+                class="flex h-full w-full flex-col items-start justify-between gap-2 md:w-2/3"
               >
                 <p class="text-gray">{{ value_of_project.desc }}</p>
+                <div class="flex flex-row flex-wrap items-center gap-2">
+                  <div
+                    v-for="(skill, index_skill) in value_of_project.skills"
+                    :key="index_skill"
+                    class="rounded-full bg-primary/20 px-2 py-1 text-xs font-medium text-primary md:px-2.5 md:py-1.5"
+                  >
+                    {{ skill }}
+                  </div>
+                </div>
               </div>
             </div>
           </NuxtLink>
@@ -167,6 +175,7 @@ const getDataProjects = onSnapshot(q_projects, (querySnapshot) => {
       link: doc.data().link,
       type: doc.data().type,
       desc: doc.data().desc,
+      skills: doc.data().skills,
       timestamp: doc.data().timestamp?.toDate()?.getFullYear(),
     };
     projects.value.push(response);
