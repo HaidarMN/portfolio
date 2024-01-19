@@ -91,6 +91,10 @@ const certificate_query = query(
   collection(firestoreDB, "Certificate"),
   orderBy("date", "desc"),
 );
+const skills_query = query(
+  collection(firestoreDB, "Skill"),
+  orderBy("order", "asc"),
+);
 
 // Function
 const getDataAbout = onSnapshot(
@@ -120,20 +124,17 @@ const getDataProfile = onSnapshot(
     });
   },
 );
-const getDataSkill = onSnapshot(
-  collection(firestoreDB, "Skill"),
-  (querySnapshot) => {
-    skills.value = [];
-    querySnapshot.forEach((doc) => {
-      var response = {
-        id: doc.id,
-        name: doc.data().name,
-        icon: doc.data().icon,
-      };
-      skills.value.push(response);
-    });
-  },
-);
+const getDataSkill = onSnapshot(skills_query, (querySnapshot) => {
+  skills.value = [];
+  querySnapshot.forEach((doc) => {
+    var response = {
+      id: doc.id,
+      name: doc.data().name,
+      icon: doc.data().icon,
+    };
+    skills.value.push(response);
+  });
+});
 const getDataCertificate = onSnapshot(certificate_query, (querySnapshot) => {
   certificates.value = [];
   querySnapshot.forEach((doc) => {
