@@ -1,63 +1,39 @@
-# Nuxt 3 Minimal Starter
+# My Portfolio 🚀
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Hi there! 👋 This is my portfolio, where I showcase the projects I've been working on, my skills, and my experiences.
 
-## Setup
+## Tech Stack 🛠️
 
-Make sure to install the dependencies:
+- ![Nuxt.js](https://api.iconify.design/devicon:nuxtjs.svg) Nuxt.js
+- ![TypeScript](https://api.iconify.design/devicon:typescript.svg) TypeScript
+- ![TailwindCSS](https://api.iconify.design/devicon:tailwindcss.svg) TailwindCSS
+- ![Firebase](https://api.iconify.design/devicon:firebase.svg) Firebase
 
-```bash
-# npm
-npm install
+## Running Locally 🖥️
 
-# pnpm
-pnpm install
+If you want to run it locally in your computer, here's how to do it:
 
-# yarn
-yarn install
-```
+1. This project is using PNPM as package manager, if you want to run it without problem make sure to install it first:
 
-## Development Server
+   ```pwsh
+   npm i -g pnpm
+   ```
 
-Start the development server on `http://localhost:3000`:
+2. Install the dependecies:
 
-```bash
-# npm
-npm run dev
+   ```pwsh
+   pnpm i
+   ```
 
-# pnpm
-pnpm run dev
+3. Run the development server at [http://localhost:3000](http://localhost:3000):
+   ```pwsh
+   pnpm dev
+   ```
 
-# yarn
-yarn dev
-```
+## Deploying 🌐
 
-## Production
+The portfolio is hosted on Netlify.
 
-Build the application for production:
+## Contact 📱
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Want to get in touch? All my available contacts can be found at my [portfolio](https://haidarmn-portfolio.netlify.app/).
