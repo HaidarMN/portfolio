@@ -19,6 +19,11 @@ export default defineNuxtConfig({
     baseURL: "/",
     buildAssetsDir: "assets",
   },
+  runtimeConfig: {
+    public: {
+      FIREBASE_KEY: process.env.NUXT_FIREBASE_KEY,
+    },
+  },
   modules: [
     "@pinia/nuxt",
     [
