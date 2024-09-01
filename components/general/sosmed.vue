@@ -3,9 +3,9 @@
     class="fixed bottom-10 left-14 hidden flex-col items-center justify-between gap-4 lg:flex"
   >
     <NuxtLink
-      v-for="value_of_contact in contact"
-      :key="value_of_contact.id"
-      :to="value_of_contact.path"
+      v-for="value_of_contact in contactsList"
+      :key="value_of_contact.label"
+      :to="value_of_contact.url"
       :aria-label="value_of_contact.label"
       target="_blank"
       class="relative flex flex-row items-center gap-2"
@@ -21,32 +21,39 @@
         {{ value_of_contact.label }}
       </span>
     </NuxtLink>
-    <div class="h-10 w-0.5 bg-primary"></div>
+    <div class="h-10 w-0.5 bg-primary" />
   </div>
 </template>
 
 <script setup>
-import { firestoreDB } from "~/server/lib/firebase";
-import { collection, onSnapshot } from "firebase/firestore";
 import { ref } from "vue";
 
 // Variabel
-const contact = ref([]);
-
-// Function
-const getDataContact = onSnapshot(
-  collection(firestoreDB, "Contact"),
-  (querySnapshot) => {
-    contact.value = [];
-    querySnapshot.forEach((doc) => {
-      var response = {
-        id: doc.id,
-        label: doc.data().label,
-        path: doc.data().path,
-        icon: doc.data().icon,
-      };
-      contact.value.push(response);
-    });
+const contactsList = ref([
+  {
+    label: "WhatsApp",
+    icon: "ic:round-whatsapp",
+    url: "https://wa.me/6285235118859",
   },
-);
+  {
+    label: "eMail",
+    icon: "material-symbols:mail-rounded",
+    url: "mailto:haidarmn31@gmail.com",
+  },
+  {
+    label: "LinkedIn",
+    icon: "mdi:linkedin",
+    url: "https://www.linkedin.com/in/haidar-muhammad-naufal",
+  },
+  {
+    label: "Github",
+    icon: "mdi:github",
+    url: "https://github.com/HaidarMN",
+  },
+  {
+    label: "Instagram",
+    icon: "mdi:instagram",
+    url: "https://www.instagram.com/zev_alarick",
+  },
+]);
 </script>

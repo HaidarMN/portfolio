@@ -9,5 +9,3 @@
 <script setup>
 const year = ref(new Date().getFullYear());
 </script>
-
-<style lang="scss" scoped></style>

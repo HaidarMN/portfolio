@@ -1,34 +1,45 @@
 {
   "name": "nuxt-app",
+  "version": "2.0.0",
+  "description": "Haidar Muhammad Naufal's Portfolio",
   "private": true,
+  "author": {
+    "name": "Haidar Muhammad Naufal",
+    "email": "haidarmn31@gmail.com",
+    "url": "https://haidarmn.github.io"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "lint": "eslint .",
     "format": "prettier . --write",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxt/eslint": "^0.5.5",
     "@nuxt/image": "1.0.0-rc.1",
     "@nuxtjs/google-fonts": "^3.0.2",
     "@pinia/nuxt": "^0.4.11",
-    "autoprefixer": "^10.4.15",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.9.1",
     "gh-pages": "^6.1.0",
     "nuxt": "^3.7.0",
     "nuxt-icon": "^0.5.0",
-    "postcss": "^8.4.28",
+    "postcss": "^8.4.42",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
     "sass": "^1.66.1",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.17",
     "animate.css": "^4.1.1",
-    "firebase": "^10.3.0",
+    "firebase": "^10.13.1",
     "sass-loader": "^13.3.2"
   }
 }

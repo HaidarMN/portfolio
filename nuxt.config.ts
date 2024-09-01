@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   // css: ["~/assets/css/main.css"],
   app: {
     head: {
-      title: "Haidar Muhammad Naufal | Frontend Developer",
+      title: "Haidar Muhammad Naufal | Full Stack Developer",
       link: [{ rel: "icon", type: "image/x-icon", href: "/h.svg" }],
       htmlAttrs: {
         lang: "en",
@@ -31,6 +31,7 @@ export default defineNuxtConfig({
     ],
     "nuxt-icon",
     "@nuxt/image",
+    "@nuxt/eslint",
   ],
   image: {
     dir: "public",
