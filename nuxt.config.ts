@@ -24,6 +24,7 @@ export default defineNuxtConfig({
       FIREBASE_KEY: process.env.NUXT_FIREBASE_KEY,
     },
   },
+  plugins: ["~/plugins/firebase.ts"],
   modules: [
     "@pinia/nuxt",
     [
