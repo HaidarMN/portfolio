@@ -15,17 +15,17 @@
             :key="x"
             class="flex animate-pulse flex-col items-start gap-2"
           >
-            <div class="h-6 w-full rounded-full bg-secondary md:w-80"/>
+            <div class="h-6 w-full rounded-full bg-secondary md:w-80" />
 
             <div class="flex w-full flex-col items-start gap-4 md:flex-row">
-              <div class="h-40 w-full rounded-lg bg-secondary md:w-1/3"/>
+              <div class="h-40 w-full rounded-lg bg-secondary md:w-1/3" />
               <div
                 class="flex h-full w-full flex-col items-start justify-normal gap-10 md:w-2/3 md:justify-between md:gap-2"
               >
                 <div class="flex w-full flex-col gap-2">
-                  <div class="h-4 w-full rounded-full bg-secondary"/>
-                  <div class="h-4 w-full rounded-full bg-secondary"/>
-                  <div class="h-4 w-full rounded-full bg-secondary"/>
+                  <div class="h-4 w-full rounded-full bg-secondary" />
+                  <div class="h-4 w-full rounded-full bg-secondary" />
+                  <div class="h-4 w-full rounded-full bg-secondary" />
                 </div>
 
                 <div class="flex flex-row flex-wrap items-center gap-2">
@@ -33,7 +33,7 @@
                     v-for="y in 3"
                     :key="y"
                     class="h-6 w-20 rounded-full bg-secondary px-2 py-1 md:px-2.5 md:py-1.5"
-                    />
+                  />
                 </div>
               </div>
             </div>
@@ -62,11 +62,14 @@
             </div>
 
             <div class="flex w-full flex-col items-start gap-4 md:flex-row">
-              <img
+              <NuxtImg
                 :src="project.background"
                 :alt="project.name"
                 class="w-full rounded-lg md:w-1/3"
-              >
+                quality="80"
+                format="webp"
+                loading="lazy"
+              />
               <div
                 class="flex h-full w-full flex-col items-start justify-between gap-2 md:w-2/3"
               >
@@ -108,10 +111,10 @@
               class="animate-pulse border-b border-gray text-gray"
             >
               <td class="px-2 py-4" data-label="Year">
-                <div class="h-4 w-full rounded-full bg-secondary"/>
+                <div class="h-4 w-full rounded-full bg-secondary" />
               </td>
               <td class="px-2 py-4" data-label="Project">
-                <div class="h-4 w-full rounded-full bg-secondary lg:w-96"/>
+                <div class="h-4 w-full rounded-full bg-secondary lg:w-96" />
               </td>
               <td class="px-2 py-4" data-label="Built with">
                 <div
@@ -121,11 +124,11 @@
                     v-for="y in 3"
                     :key="y"
                     class="h-6 w-20 rounded-full bg-secondary px-2 py-1 md:px-2.5 md:py-1.5"
-                    />
+                  />
                 </div>
               </td>
               <td class="px-2 py-4">
-                <div class="h-4 w-full rounded-full bg-secondary"/>
+                <div class="h-4 w-full rounded-full bg-secondary" />
               </td>
             </tr>
           </tbody>
@@ -185,16 +188,17 @@
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
 
-import { firestoreDB } from "~/server/lib/firebase";
 import { collection, orderBy, query, getDocs } from "firebase/firestore";
 
 import type { ProjectType } from "~/types";
 
 // Variabel
+const { $firestoreDB } = useNuxtApp();
+
 const selectedProjects = ref<ProjectType[]>([]);
 const allProjects = ref<ProjectType[]>([]);
 const dataQuery = query(
-  collection(firestoreDB, "projects"),
+  collection($firestoreDB, "projects"),
   orderBy("start_date", "desc"),
 );
 const tableHeader = ref(["Year", "Project", "Built with", "Link"]);
@@ -222,7 +226,6 @@ const getData = async () => {
     });
   } catch (error) {
     console.error(error);
-    
   }
 };
 

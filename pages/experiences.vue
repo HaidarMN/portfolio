@@ -118,15 +118,16 @@
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
 
-import { firestoreDB } from "~/server/lib/firebase";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 
 import type { ExperienceType } from "~/types";
 
 // Variabel
+const { $firestoreDB } = useNuxtApp();
+
 const dataResponse = ref<ExperienceType[]>([]);
 const dataQuery = query(
-  collection(firestoreDB, "experiences"),
+  collection($firestoreDB, "experiences"),
   orderBy("start_date", "desc"),
 );
 
